@@ -6,14 +6,9 @@ use Illuminate\Http\Request;
 
 class SiswaController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
-        //
+        return view('siswa.index');
     }
 
     /**
@@ -23,7 +18,7 @@ class SiswaController extends Controller
      */
     public function create()
     {
-        //
+        return view('siswa.create');
     }
 
     /**
@@ -56,7 +51,7 @@ class SiswaController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('siswa.edit');
     }
 
     /**
