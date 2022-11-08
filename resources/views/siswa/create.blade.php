@@ -10,11 +10,11 @@
                 <hr>
             </div>
             <div class="col-4 m-auto">
-                <form action="" method="post">
+                <form action="/siswa" method="post">
                     @csrf
                     <div class="mb-3">
                         <label for="nis" class="form-label">NIS :</label>
-                        <input type="text" name="nis" id="nis" class="form-control">
+                        <input type="number" name="nis" id="nis" class="form-control">
                     </div>
                     <div class="mb-3">
                         <label for="nama" class="form-label">NAMA :</label>

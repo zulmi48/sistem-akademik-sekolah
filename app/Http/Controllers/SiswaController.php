@@ -4,77 +4,57 @@ namespace App\Http\Controllers;
 
 use App\Models\Siswa;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class SiswaController extends Controller
 {
     public function index()
     {
-        return view('siswa.index');
+        $dataSiswa = Siswa::orderBy('id', 'desc')->get();
+        return view('siswa.index', compact('dataSiswa'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
         return view('siswa.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
-        //
+        $create = Siswa::create($request->all());
+        if ($create) {
+            Session::flash('message', 'Data berhasil ditambahkan');
+        }
+        return redirect('/siswa');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function show($id)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function edit($id)
     {
-        return view('siswa.edit');
+        $siswa = Siswa::findOrFail($id);
+        return view('siswa.edit', compact('siswa'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function update(Request $request, $id)
     {
-        //
+        $update = Siswa::findOrFail($id)->update($request->all());
+        if ($update) {
+            Session::flash('message', 'Data berhasil diupdate');
+        }
+        return redirect('/siswa');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function destroy($id)
     {
-        //
+        $del = Siswa::destroy($id);
+        return redirect('/siswa');
     }
 }

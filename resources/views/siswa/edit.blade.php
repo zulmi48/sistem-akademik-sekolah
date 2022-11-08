@@ -10,27 +10,32 @@
                 <hr>
             </div>
             <div class="col-4 m-auto">
-                <form action="" method="post">
+                <form action="/siswa/{{ $siswa->id }}" method="post">
+                    @method('PUT')
                     @csrf
                     <div class="mb-3">
                         <label for="nis" class="form-label">NIS :</label>
-                        <input type="text" name="nis" id="nis" class="form-control">
+                        <input type="number" name="nis" id="nis" class="form-control" value="{{ $siswa->nis }}">
                     </div>
                     <div class="mb-3">
                         <label for="nama" class="form-label">NAMA :</label>
-                        <input type="text" name="nama" id="nama" class="form-control">
+                        <input type="text" name="nama" id="nama" class="form-control" value="{{ $siswa->nama }}">
                     </div>
                     <div class="mb-3">
                         <label for="jenis_kelamin" class="form-label">Jenis Kelamin</label>
                         <select class="form-control" name="jenis_kelamin" id="jenis_kelamin">
-                            <option value="">- Pilih Salah Satu -</option>
+                            @if ($siswa->jenis_kelamin == "L")
                             <option value="L">Laki-laki</option>
                             <option value="P">Perempuan</option>
+                            @else
+                            <option value="P">Perempuan</option>
+                            <option value="L">Laki-laki</option>
+                            @endif
                         </select>
                     </div>
                     <div class="mb-3">
                         <label for="alamat" class="form-label">Alamat</label>
-                        <textarea class="form-control" name="alamat" id="alamat" cols="20" rows="5"></textarea>
+                        <textarea class="form-control" name="alamat" id="alamat" cols="20" rows="5">{{ $siswa->alamat }}</textarea>
                     </div>
                     <div class="mb-3">
                         <button type="submit" class="btn btn-primary btn-sm">Simpan</button>

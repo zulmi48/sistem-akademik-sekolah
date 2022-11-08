@@ -9,4 +9,11 @@ class Siswa extends Model
 {
     use HasFactory;
     protected $table = 'siswa';
+    // protected $fiilable = [
+    //     'nis',
+    //     'nama',
+    //     'jenis_kelamin',
+    //     'alamat'
+    // ];
+    protected $guarded = [];
 }

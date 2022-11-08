@@ -20,19 +20,23 @@
                         <th>Alamat</th>
                         <th>Action</th>
                     </tr>
+                    @foreach ($dataSiswa as $siswa)
                     <tr>
-                        <td>Lorem</td>
-                        <td>Lorem ipsum dolor sit amet.</td>
-                        <td>Lorem ipsum dolor sit amet.</td>
-                        <td>Lorem ipsum dolor sit amet.</td>
-                        <td>Lorem ipsum dolor sit amet.</td>
+                        <td>{{ $loop->iteration }}</td>
+                        <td>{{ $siswa->nis }}</td>
+                        <td>{{ $siswa->nama }}</td>
+                        <td>{{ $siswa->jenis_kelamin }}</td>
+                        <td>{{ $siswa->alamat }}</td>
                         <td>
-                            <a href="siswa/1/edit" class="btn btn-sm btn-warning">Edit</a>
-                            <form action="" method="post">
+                            <a href="siswa/{{ $siswa->id }}/edit" class="btn btn-sm btn-warning">Edit</a>
+                            <form action="/siswa/{{ $siswa->id }}" style="display: inline-block" method="post">
+                                @csrf
+                                @method('DELETE')
                                 <button class="btn btn-danger btn-sm">Delete</button>
                             </form>
                         </td>
                     </tr>
+                    @endforeach
                 </table>
             </div>
         </div>
