@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\SiswaCreateRequest;
+use App\Http\Requests\SiswaUpdateRequest;
 use App\Models\Siswa;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
@@ -19,12 +21,10 @@ class SiswaController extends Controller
         return view('siswa.create');
     }
 
-    public function store(Request $request)
+    public function store(SiswaCreateRequest $request)
     {
         $create = Siswa::create($request->all());
-        if ($create) {
-            Session::flash('message', 'Data berhasil ditambahkan');
-        }
+        Session::flash('success', 'Data berhasil ditambahkan!');
         return redirect('/siswa');
     }
 
@@ -42,12 +42,10 @@ class SiswaController extends Controller
     }
 
 
-    public function update(Request $request, $id)
+    public function update(SiswaUpdateRequest $request, $id)
     {
-        $update = Siswa::findOrFail($id)->update($request->all());
-        if ($update) {
-            Session::flash('message', 'Data berhasil diupdate');
-        }
+        Siswa::findOrFail($id)->update($request->all());
+        Session::flash('success', 'Data berhasil diupdate!');
         return redirect('/siswa');
     }
 
@@ -55,6 +53,7 @@ class SiswaController extends Controller
     public function destroy($id)
     {
         $del = Siswa::destroy($id);
+        Session::flash('success', 'Data telah terhapus!');
         return redirect('/siswa');
     }
 }

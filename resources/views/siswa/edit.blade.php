@@ -9,6 +9,15 @@
                 <h1>Edit Data</h1>
                 <hr>
             </div>
+            @if ($errors->any())
+            <div class="alert alert-danger" role="alert">
+                <ul>
+                    @foreach ($errors->all() as $item)
+                        <li>{{ $item }}</li>
+                    @endforeach
+                </ul>
+              </div>
+            @endif
             <div class="col-4 m-auto">
                 <form action="/siswa/{{ $siswa->id }}" method="post">
                     @method('PUT')

@@ -5,8 +5,13 @@
     <div class="row mt-5">
         <div class="col-md-12">
             <div class="mb-3 text-center">
-                <h1>Data Siswa</h1>
+                <h1>Data Siswa</h1><hr>
             </div>
+            @if (Session::has('success'))
+            <div class="alert alert-success">
+                {{ Session::get('success') }}
+            </div>
+            @endif
             <div class="text-end mb-2">
                 <a href="/siswa/create" class="btn btn-sm btn-success">Tambah</a>
             </div>
