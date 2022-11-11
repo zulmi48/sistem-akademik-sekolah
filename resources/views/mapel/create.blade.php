@@ -23,11 +23,11 @@
                     @csrf
                     <div class="mb-3">
                         <label for="kode" class="form-label">Kode :</label>
-                        <input type="text" name="kode" id="kode" class="form-control">
+                        <input type="text" name="kode" id="kode" class="form-control" value="{{ old('kode') }}">
                     </div>
                     <div class="mb-3">
                         <label for="nama" class="form-label">Nama :</label>
-                        <input type="text" name="nama" id="nama" class="form-control">
+                        <input type="text" name="nama" id="nama" class="form-control" value="{{ old('nama') }}">
                     </div>
                     <div class="mb-3">
                         <label for="semester" class="form-label">Semester</label>

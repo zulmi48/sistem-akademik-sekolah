@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\MapelRequest;
 use App\Models\Mapel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
@@ -35,7 +36,7 @@ class MapelController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(MapelRequest $request)
     {
         // dd($request->all());
         Mapel::create($request->all());
@@ -73,7 +74,7 @@ class MapelController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(MapelRequest $request, $id)
     {
         Mapel::findOrFail($id)->update($request->all());
         Session::flash('success', "Data berhasil diupdate!");
