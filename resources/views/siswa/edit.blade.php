@@ -24,11 +24,11 @@
                     @csrf
                     <div class="mb-3">
                         <label for="nis" class="form-label">NIS :</label>
-                        <input type="number" name="nis" id="nis" class="form-control" value="{{ $siswa->nis }}">
+                        <input type="number" name="nis" id="nis" class="form-control" value="{{ old('nis', $siswa->nis) }}">
                     </div>
                     <div class="mb-3">
                         <label for="nama" class="form-label">NAMA :</label>
-                        <input type="text" name="nama" id="nama" class="form-control" value="{{ $siswa->nama }}">
+                        <input type="text" name="nama" id="nama" class="form-control" value="{{ old('nama', $siswa->nama) }}">
                     </div>
                     <div class="mb-3">
                         <label for="jenis_kelamin" class="form-label">Jenis Kelamin</label>
@@ -44,7 +44,7 @@
                     </div>
                     <div class="mb-3">
                         <label for="alamat" class="form-label">Alamat</label>
-                        <textarea class="form-control" name="alamat" id="alamat" cols="20" rows="5">{{ $siswa->alamat }}</textarea>
+                        <textarea class="form-control" name="alamat" id="alamat" cols="20" rows="5">{{ old('alamat', $siswa->alamat)  }}</textarea>
                     </div>
                     <div class="mb-3">
                         <button type="submit" class="btn btn-primary btn-sm">Simpan</button>
