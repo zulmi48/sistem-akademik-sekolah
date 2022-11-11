@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Mapel;
 use Illuminate\Http\Request;
 
 class MapelController extends Controller
@@ -13,7 +14,8 @@ class MapelController extends Controller
      */
     public function index()
     {
-        //
+        $dataMapel = Mapel::all();
+        return view('mapel.index', compact('dataMapel'));
     }
 
     /**
@@ -23,7 +25,7 @@ class MapelController extends Controller
      */
     public function create()
     {
-        //
+        return view('mapel.create');
     }
 
     /**
@@ -56,7 +58,7 @@ class MapelController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('mapel.edit');
     }
 
     /**
