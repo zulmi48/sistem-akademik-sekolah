@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Mapel;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class MapelController extends Controller
 {
@@ -36,7 +37,10 @@ class MapelController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // dd($request->all());
+        Mapel::create($request->all());
+        Session::flash('success', "Data berhasil ditambahkan!");
+        return redirect('/mapel');
     }
 
     /**
@@ -58,7 +62,8 @@ class MapelController extends Controller
      */
     public function edit($id)
     {
-        return view('mapel.edit');
+        $mapel = Mapel::findOrFail($id);
+        return view('mapel.edit', compact('mapel'));
     }
 
     /**
@@ -70,7 +75,9 @@ class MapelController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        Mapel::findOrFail($id)->update($request->all());
+        Session::flash('success', "Data berhasil diupdate!");
+        return redirect('/mapel');
     }
 
     /**
@@ -81,6 +88,8 @@ class MapelController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Mapel::destroy($id);
+        Session::flash('success', "Data berhasil terhapus!");
+        return redirect('/mapel');
     }
 }

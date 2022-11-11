@@ -26,6 +26,10 @@ class MapelSeeder extends Seeder
                 "nama" => "Matematika Kelas VII",
                 "semester" => "Genap"
             ], [
+                "kode" => "BIN0701",
+                "nama" => "Bhs Indonesia Kelas VII",
+                "semester" => "Ganjil"
+            ], [
                 "kode" => "BIN0702",
                 "nama" => "Bhs Indonesia Kelas VII",
                 "semester" => "Genap"
