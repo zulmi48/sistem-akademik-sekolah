@@ -15,10 +15,10 @@ return new class extends Migration
     {
         Schema::create('guru', function (Blueprint $table) {
             $table->id();
+            $table->integer('nik');
             $table->string('nama');
-            $table->integer('umur');
-            $table->string('alamat');
             $table->enum('jenis_kelamin', ['L', 'P']);
+            $table->string('alamat');
             $table->timestamps();
         });
     }

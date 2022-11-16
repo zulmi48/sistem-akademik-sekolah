@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Guru;
 use Illuminate\Http\Request;
 
 class GuruController extends Controller
@@ -13,7 +14,8 @@ class GuruController extends Controller
      */
     public function index()
     {
-        //
+        $dataGuru = Guru::all();
+        return view('guru.index', compact('dataGuru'));
     }
 
     /**
@@ -23,7 +25,7 @@ class GuruController extends Controller
      */
     public function create()
     {
-        //
+        return view('guru.create');
     }
 
     /**
