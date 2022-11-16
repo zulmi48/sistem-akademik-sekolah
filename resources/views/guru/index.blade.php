@@ -28,7 +28,7 @@
                     @foreach ($dataGuru as $guru)
                     <tr>
                         <td>{{ $loop->iteration }}</td>
-                        <td>{{ $guru->nis }}</td>
+                        <td>{{ $guru->nik }}</td>
                         <td>{{ $guru->nama }}</td>
                         <td>{{ $guru->jenis_kelamin }}</td>
                         <td>{{ $guru->alamat }}</td>
