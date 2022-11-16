@@ -24,7 +24,7 @@
                     @csrf
                     <div class="mb-3">
                         <label for="nik" class="form-label">NIK :</label>
-                        <input type="number" name="nik" id="nik" class="form-control" value="{{ old('nis', $guru->nis) }}">
+                        <input type="number" name="nik" id="nik" class="form-control" value="{{ old('nik', $guru->nik) }}">
                     </div>
                     <div class="mb-3">
                         <label for="nama" class="form-label">Nama :</label>
