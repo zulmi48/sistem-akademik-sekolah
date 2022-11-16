@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\GuruRequest;
 use App\Models\Guru;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
@@ -19,7 +20,7 @@ class GuruController extends Controller
         return view('guru.create');
     }
 
-    public function store(Request $request)
+    public function store(GuruRequest $request)
     {
         Guru::create($request->all());
         Session::flash('success', "Data berhasil ditambahkan!");
@@ -37,7 +38,7 @@ class GuruController extends Controller
         return view('guru.edit', compact('guru'));
     }
 
-    public function update(Request $request, $id)
+    public function update(GuruRequest $request, $id)
     {
         Guru::findOrFail($id)->update($request->all());
         Session::flash('success', "Data berhasil di-update!");
