@@ -31,7 +31,7 @@ class SiswaController extends Controller
 
     public function show($id)
     {
-        $siswa = Siswa::with('mapel')->findOrFail($id);
+        $siswa = Siswa::with(['mapel', 'kelas'])->findOrFail($id);
         return view('siswa.show', compact('siswa'));
     }
 

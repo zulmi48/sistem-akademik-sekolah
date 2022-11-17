@@ -47,7 +47,7 @@
                             <tr>
                                 <th>Kelas</th>
                                 <td>:</td>
-                                <td></td>
+                                <td>{{ $siswa->kelas->nama }}</td>
                             </tr>
                         </table>
                     </div>
