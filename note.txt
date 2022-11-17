@@ -1,0 +1,5 @@
+membuat relasi antara tabel murid guru mata pelajaran
+membuat halaman detail relasi
+membuat halaman profil siswa yang berisi tentang detail siswa dan nilai2 pelajaran
+membuat halaman profil guru yang berisi tentang detail mengajar
+merubah tampilan menjadi tampilan profesional

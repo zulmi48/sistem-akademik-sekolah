@@ -29,7 +29,7 @@
                     <tr>
                         <td>{{ $loop->iteration }}</td>
                         <td>{{ $siswa->nis }}</td>
-                        <td>{{ $siswa->nama }}</td>
+                        <td><a href="/siswa/{{ $siswa->id }}" class="btn btn-sm btn-outline-secondary">{{ $siswa->nama }}</a></td>
                         <td>{{ $siswa->jenis_kelamin }}</td>
                         <td>{{ $siswa->alamat }}</td>
                         <td>

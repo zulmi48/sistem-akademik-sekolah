@@ -9,11 +9,10 @@ class Siswa extends Model
 {
     use HasFactory;
     protected $table = 'siswa';
-    // protected $fiilable = [
-    //     'nis',
-    //     'nama',
-    //     'jenis_kelamin',
-    //     'alamat'
-    // ];
     protected $guarded = [];
+
+    public function mapel()
+    {
+        return $this->belongsToMany(Mapel::class, 'mapel_siswa', 'siswa_id', 'mapel_id');
+    }
 }
