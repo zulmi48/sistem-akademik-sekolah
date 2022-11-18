@@ -23,7 +23,7 @@
                     @foreach ($dataKelas as $kelas)
                     <tr>
                         <td>{{ $loop->iteration }}</td>
-                        <td>{{ $kelas->nama }}</td>
+                        <td><a href="/kelas/{{ $kelas->id }}" class="btn btn-sm btn-outline-secondary">{{ $kelas->nama }}</a></td>
                         <td>
                             <a href="/kelas/{{ $kelas->id }}/edit" class="btn btn-sm btn-warning">Edit</a>
                             <form action="/kelas/{{ $kelas->id }}" style="display: inline-block" method="post">
