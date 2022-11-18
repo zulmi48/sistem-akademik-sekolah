@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Kelas;
 use Illuminate\Http\Request;
 
 class KelasController extends Controller
@@ -13,7 +14,8 @@ class KelasController extends Controller
      */
     public function index()
     {
-        //
+        $dataKelas = Kelas::orderBy('nama', 'asc')->get();
+        return view('kelas.index', compact('dataKelas'));
     }
 
     /**
@@ -23,7 +25,7 @@ class KelasController extends Controller
      */
     public function create()
     {
-        //
+        return view('kelas.create');
     }
 
     /**
@@ -34,7 +36,8 @@ class KelasController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Kelas::create(['nama' => $request->nama]);
+        return redirect('/kelas');
     }
 
     /**
@@ -56,7 +59,8 @@ class KelasController extends Controller
      */
     public function edit($id)
     {
-        //
+        $kelas = Kelas::findOrFail($id);
+        return view('kelas.edit', compact('kelas'));
     }
 
     /**
@@ -68,7 +72,8 @@ class KelasController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        Kelas::findOrFail($id)->update(['nama' => $request->nama]);
+        return redirect('/kelas');
     }
 
     /**
@@ -79,6 +84,7 @@ class KelasController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Kelas::destroy($id);
+        return redirect('/kelas');
     }
 }

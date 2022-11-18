@@ -43,7 +43,6 @@
                     </tr>
                     @endforeach
                 </table>
-                {{-- {{ $dataGuru->links() }} --}}
             </div>
         </div>
     </div>
