@@ -10,4 +10,9 @@ class Guru extends Model
     use HasFactory;
     protected $table = "guru";
     protected $guarded = [];
+
+    public function kelas()
+    {
+        return $this->hasOne(Kelas::class);
+    }
 }

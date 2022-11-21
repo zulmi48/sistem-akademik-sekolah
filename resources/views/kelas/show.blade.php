@@ -7,6 +7,12 @@
             <div class="mb-3 text-center">
                 <h1>Daftar Siswa Kelas {{ $kelas->nama }}</h1>
                 <hr>
+                <strong>Wali Kelas : </strong>
+                @if ($kelas->guru->jenis_kelamin == 'L')
+                    Bapak {{ $kelas->guru->nama }}
+                @else
+                Ibu {{ $kelas->guru->nama }}
+                @endif
             </div>
             <div class="mb-3">
                 <div class="text-start">

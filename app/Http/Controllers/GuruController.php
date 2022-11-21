@@ -11,7 +11,7 @@ class GuruController extends Controller
 {
     public function index()
     {
-        $dataGuru = Guru::orderBy('id', 'desc')->get();
+        $dataGuru = Guru::with('kelas')->orderBy('nama', 'asc')->get();
         return view('guru.index', compact('dataGuru'));
     }
 
@@ -29,7 +29,8 @@ class GuruController extends Controller
 
     public function show($id)
     {
-        //
+        $guru = Guru::with('kelas')->findOrFail($id);
+        return view('guru.show', compact('guru'));
     }
 
     public function edit($id)

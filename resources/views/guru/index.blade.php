@@ -29,7 +29,7 @@
                     <tr>
                         <td>{{ $loop->iteration }}</td>
                         <td>{{ $guru->nik }}</td>
-                        <td>{{ $guru->nama }}</td>
+                        <td><a href="/guru/{{ $guru->id }}" class="btn btn-sm btn-outline-secondary">{{ $guru->nama }}</a></td>
                         <td>{{ $guru->jenis_kelamin }}</td>
                         <td>{{ $guru->alamat }}</td>
                         <td>
