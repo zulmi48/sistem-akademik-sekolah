@@ -19,6 +19,7 @@
                         <th>#</th>
                         <th>Kode</th>
                         <th>Nama Mapel</th>
+                        <th>Kelas</th>
                         <th>Semester</th>
                         <th>Action</th>
                     </tr>
@@ -27,6 +28,7 @@
                         <td>{{ $loop->iteration }}</td>
                         <td>{{ $mapel->kode }}</td>
                         <td>{{ $mapel->nama }}</td>
+                        <td>{{ $mapel->kelas }}</td>
                         <td>{{ $mapel->semester }}</td>
                         <td>
                             <a href="/mapel/{{ $mapel->id }}/edit" class="btn btn-sm btn-warning">Edit</a>

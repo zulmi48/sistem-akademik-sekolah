@@ -19,29 +19,34 @@ class MapelSeeder extends Seeder
         $data = [
             [
                 "kode" => "MTK0701",
-                "nama" => "Matematika Kelas VII",
+                "nama" => "Matematika",
+                "kelas" => "VII",
                 "semester" => "Ganjil",
-            ], [
-                "kode" => "MTK0702",
-                "nama" => "Matematika Kelas VII",
-                "semester" => "Genap"
-            ], [
+            ],
+            [
                 "kode" => "BIN0701",
-                "nama" => "Bhs Indonesia Kelas VII",
-                "semester" => "Ganjil"
-            ], [
-                "kode" => "BIN0702",
-                "nama" => "Bhs Indonesia Kelas VII",
-                "semester" => "Genap"
-            ], [
+                "nama" => "Bhs. Indonesia",
+                "kelas" => "VII",
+                "semester" => "Ganjil",
+            ],
+            [
+                "kode" => "SNS0701",
+                "nama" => "Sains",
+                "kelas" => "VII",
+                "semester" => "Ganjil",
+            ],
+            [
                 "kode" => "BEN0701",
-                "nama" => "Bhs Inggris Kelas VII",
-                "semester" => "Ganjil"
-            ], [
-                "kode" => "BEN0702",
-                "nama" => "Bhs Inggris Kelas VII",
-                "semester" => "Genap"
-            ]
+                "nama" => "BHs.Inggris",
+                "kelas" => "VII",
+                "semester" => "Ganjil",
+            ],
+            [
+                "kode" => "IPS0701",
+                "nama" => "Ilmu Pengetahuan Sosial",
+                "kelas" => "VII",
+                "semester" => "Ganjil",
+            ],
         ];
         DB::table('mapel')->insert($data);
     }

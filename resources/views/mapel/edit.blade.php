@@ -31,13 +31,31 @@
                         <input type="text" name="nama" id="nama" class="form-control" value="{{ old('nama', $mapel->nama)  }}">
                     </div>
                     <div class="mb-3">
+                        <label for="kelas" class="form-label">Kelas</label>
+                        <select class="form-control" name="kelas" id="kelas">
+                            @if ($mapel->kelas == "VII")
+                            <option value="VII" selected>VII</option>
+                            <option value="VIII">VIII</option>
+                            <option value="IX">IX</option>
+                            @elseif ($mapel->kelas == "VII")
+                            <option value="VII">VIII</option>
+                            <option value="VIII" selected>VII</option>
+                            <option value="IX">IX</option>
+                            @else
+                            <option value="VII">VIII</option>
+                            <option value="VIII">VII</option>
+                            <option value="IX" selected>IX</option>
+                            @endif
+                        </select>
+                    </div>
+                    <div class="mb-3">
                         <label for="semester" class="form-label">Semester</label>
                         <select class="form-control" name="semester" id="semester">
                             @if ($mapel->semester == "Ganjil")
-                            <option value="Ganjil">Ganjil</option>
+                            <option value="Ganjil" selected>Ganjil</option>
                             <option value="Genap">Genap</option>
                             @else
-                            <option value="Genap">Genap</option>
+                            <option value="Genap" selected>Genap</option>
                             <option value="Ganjil">Ganjil</option>
                             @endif
                         </select>

@@ -30,6 +30,15 @@
                         <input type="text" name="nama" id="nama" class="form-control" value="{{ old('nama') }}">
                     </div>
                     <div class="mb-3">
+                        <label for="kelas" class="form-label">Kelas</label>
+                        <select class="form-control" name="kelas" id="kelas">
+                            <option value="">- Pilih Salah Satu -</option>
+                            <option value="VII">VII</option>
+                            <option value="VIII">VIII</option>
+                            <option value="IX">IX</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
                         <label for="semester" class="form-label">Semester</label>
                         <select class="form-control" name="semester" id="semester">
                             <option value="">- Pilih Salah Satu -</option>
