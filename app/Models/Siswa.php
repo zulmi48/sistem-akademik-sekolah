@@ -13,7 +13,8 @@ class Siswa extends Model
 
     public function mapel()
     {
-        return $this->belongsToMany(Mapel::class, 'mapel_siswa', 'siswa_id', 'mapel_id');
+        return $this->belongsToMany(Mapel::class, 'mapel_siswa', 'siswa_id', 'mapel_id')
+            ->withPivot('nilai');
     }
 
     /**

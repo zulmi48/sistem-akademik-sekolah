@@ -50,6 +50,21 @@
                                 <td>{{ $siswa->kelas->nama }}</td>
                             </tr>
                         </table>
+                        <div class="mb-3 text-center">
+                            <h5>Tabel Nilai</h5>
+                            <table class="table table-bordered">
+                                <tr>
+                                    @foreach ($siswa->mapel as $item)
+                                    <th>{{ $item->nama }}</th>
+                                    @endforeach
+                                </tr>
+                                <tr>
+                                    @foreach ($siswa->mapel as $item)
+                                    <td>{{ $item->pivot->nilai }}</td>
+                                    @endforeach
+                                </tr>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>
